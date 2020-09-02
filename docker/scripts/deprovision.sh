@@ -252,7 +252,7 @@ etimer=$(date +%s)
 echo -e "${BYELLOW}Clean time: $((etimer - stimer))${NC}"
 
 cat >/statedir/cleanup.sh <<EOF
-#!/bin/sh
+#!/bin/bash
 poweroff
 EOF
 chmod +x /statedir/cleanup.sh

@@ -1,4 +1,4 @@
-#! /bin/sh
+#! /bin/bash
 
 w 150
 root

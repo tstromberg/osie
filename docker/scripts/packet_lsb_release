@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # lsb_release - collect LSB conformance status about a system
 #

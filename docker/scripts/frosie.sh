@@ -266,7 +266,7 @@ EOF_loaderconf
 fi
 
 cat <<EOF_rclocal >$target/etc/rc.local
-#!/bin/sh
+#!/bin/bash
 /usr/local/bin/curl -v \
 -X POST \
 -H "Content-Type: application/json" \
@@ -355,7 +355,7 @@ etimer=$(date +%s)
 echo -e "${BYELLOW}Install time: $((etimer - stimer))${NC}"
 
 cat >/statedir/cleanup.sh <<EOF
-#!/bin/sh
+#!/bin/bash
 reboot
 EOF
 chmod +x /statedir/cleanup.sh

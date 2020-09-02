@@ -59,9 +59,9 @@ RUN mkdir $HOME/bin && \
 
 ENV PATH=$HOME/bin:$PATH
 
-RUN curl -fL https://github.com/mvdan/sh/releases/download/v2.3.0/shfmt_v2.3.0_linux_amd64 >/bin/shfmt && \
-    echo 'eef540565962cf1f5432c7e3cf212c333e096f9f481d6d441197c1cf878746d0 /bin/shfmt' | sha256sum -c && \
-    chmod +x /bin/shfmt
+RUN curl -fL https://github.com/mvdan/sh/releases/download/v2.3.0/shfmt_v2.3.0_linux_amd64 >/bin/bashfmt && \
+    echo 'eef540565962cf1f5432c7e3cf212c333e096f9f481d6d441197c1cf878746d0 /bin/bashfmt' | sha256sum -c && \
+    chmod +x /bin/bashfmt
 
 RUN pip3 install click j2cli packet-python==1.38.2 && \
     pip3 install coverage

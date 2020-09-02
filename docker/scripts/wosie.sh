@@ -158,7 +158,7 @@ etimer=$(date +%s)
 echo -e "${BYELLOW}Install time: $((etimer - stimer))${NC}"
 
 cat >/statedir/cleanup.sh <<EOF
-#!/bin/sh
+#!/bin/bash
 reboot
 EOF
 chmod +x /statedir/cleanup.sh

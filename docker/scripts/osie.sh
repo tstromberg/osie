@@ -326,7 +326,7 @@ if ! [[ -f /statedir/disks-partioned-image-extracted ]]; then
 	cmdline=$(sed -nr 's|GRUB_CMDLINE_LINUX='\''(.*)'\''|\1|p' /tmp/grub.default)
 
 	cat <<EOF >/statedir/cleanup.sh
-#!/bin/sh
+#!/bin/bash
 
 set -euxo pipefail
 echo "kexecing into installed os"
@@ -615,7 +615,7 @@ esac
 
 if ${reboot:-false}; then
 	cat <<EOF >/statedir/cleanup.sh
-#!/bin/sh
+#!/bin/bash
 
 set -euxo pipefail
 echo "rebooting into installed os"
