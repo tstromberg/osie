@@ -1,8 +1,9 @@
 ## Hello Contributors!
   Thx for your interest! We're so glad you're here. 
 
-### Important Resources
+#### Important Resources
   - bugs: [https://github.com/tinkerbell/osie/issues](https://github.com/tinkerbell/osie/issues)
+  - features requests: [https://github.com/tinkerbell/osie/issues](https://github.com/tinkerbell/osie/issues)
 
 ### Code of Conduct
 Available via [https://github.com/tinkerbell/osie/blob/master/.github/CODE_OF_CONDUCT.md](https://github.com/tinkerbell/osie/blob/master/.github/CODE_OF_CONDUCT.md)
