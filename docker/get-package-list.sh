@@ -35,6 +35,7 @@ packages=(
 	python3-apt
 	python3-distutils
 	sg3-utils
+	smartmontools
 	unzip
 	vim
 	wget
