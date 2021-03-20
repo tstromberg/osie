@@ -162,15 +162,15 @@ ARG ECLYPSIUM_AGENT_VERSION=2.0.0
 ARG ECLYPSIUM_AGENT_SHA256=4bb5cfe3c6c3988b99c36e864f35abd8296120d197864a26f10a4c1868c9e31a
 ARG ECLYPSIUM_AGENT_FILENAME=eclypsiumapp-${ECLYPSIUM_AGENT_VERSION}.deb
 
-COPY lfs/${ECLYPSIUM_AGENT_FILENAME} /tmp/
-RUN if [ $(uname -m) = 'x86_64' ]; then \
-        cd /tmp && \
-        echo "${ECLYPSIUM_AGENT_SHA256}  ${ECLYPSIUM_AGENT_FILENAME}" | sha256sum -c && \
-        dpkg --unpack "${ECLYPSIUM_AGENT_FILENAME}" && \
-        sed -i 's/try_restart_service /#try_restart_service /g' /var/lib/dpkg/info/eclypsiumapp.postinst && \
-        dpkg --configure eclypsiumapp && \
-        rm -f "${ECLYPSIUM_AGENT_FILENAME}"; \
-    fi ;
+# COPY lfs/${ECLYPSIUM_AGENT_FILENAME} /tmp/
+# RUN if [ $(uname -m) = 'x86_64' ]; then \
+#         cd /tmp && \
+#         echo "${ECLYPSIUM_AGENT_SHA256}  ${ECLYPSIUM_AGENT_FILENAME}" | sha256sum -c && \
+#         dpkg --unpack "${ECLYPSIUM_AGENT_FILENAME}" && \
+#         sed -i 's/try_restart_service /#try_restart_service /g' /var/lib/dpkg/info/eclypsiumapp.postinst && \
+#         dpkg --configure eclypsiumapp && \
+#         rm -f "${ECLYPSIUM_AGENT_FILENAME}"; \
+#     fi ;
 
 # freebsd ufs fs fuse
 COPY lfs/osie-fuse-* /tmp/osie/
