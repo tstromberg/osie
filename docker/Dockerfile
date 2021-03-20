@@ -46,14 +46,23 @@ RUN apt-get update -y && \
     apt-get -qy clean && \
     rm -rf /var/lib/apt/lists/* /tmp/osie/
 
-# build mstflint, done here so we can keep it cached as long as possible
-COPY build-mstflint.sh /tmp/osie/
-RUN apt-get update -y && \
-    apt-get install -y build-essential && \
-    (cd /tmp/osie/ && ./build-mstflint.sh) && \
-    apt-get -qy remove build-essential && \
+# install mstflint, done here so we can keep it cached as long as possible
+RUN if [ $(uname -m) = 'x86_64' ]; then \
+    wget "http://archive.ubuntu.com/ubuntu/pool/universe/m/mstflint/mstflint_4.14.0+3-1_amd64.deb" && \
+    apt-get update -y && \
+    apt-get install -y ./mstflint_4.14.0+3-1_amd64.deb && \
     apt-get -qy autoremove && \
-    apt-get -qy clean && \
+    apt-get -qy clean ; \
+    fi && \
+    rm -rf /var/lib/apt/lists/* /tmp/osie/
+
+RUN if [ $(uname -m) = 'aarch64' ]; then \
+    wget "http://ports.ubuntu.com/pool/universe/m/mstflint/mstflint_4.14.0+3-1_arm64.deb" && \
+    apt-get update -y && \
+    apt-get install -y ./mstflint_4.14.0+3-1_arm64.deb && \
+    apt-get -qy autoremove && \
+    apt-get -qy clean ; \
+    fi && \
     rm -rf /var/lib/apt/lists/* /tmp/osie/
 
 ARG PACKET_HARDWARE_COMMIT=68a25da2b6a3d3281838bff6b62639438116d0d1
