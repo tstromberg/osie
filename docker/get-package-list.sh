@@ -26,6 +26,7 @@ packages=(
 	iproute2
 	jq
 	mdadm
+	mstflint
 	nvme-cli
 	parted
 	pciutils
