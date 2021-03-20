@@ -1,4 +1,4 @@
-FROM ubuntu:hirsute
+FROM ubuntu:focal
 
 VOLUME /statedir
 ENTRYPOINT ["/entrypoint.sh"]
