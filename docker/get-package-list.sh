@@ -36,6 +36,7 @@ packages=(
 	python3-distutils
 	sg3-utils
 	smartmontools
+	systemd
 	unzip
 	vim
 	wget
