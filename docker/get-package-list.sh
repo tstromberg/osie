@@ -15,6 +15,7 @@ packages=(
 	efibootmgr
 	ethtool
 	file
+	lshw
 	gdisk
 	git
 	grub-efi-$grub_efi_arch-bin
@@ -25,10 +26,14 @@ packages=(
 	iproute2
 	jq
 	mdadm
+	nvme-cli
 	parted
 	pciutils
 	pv
 	python3
+	python3-pip
+	python3-apt
+	python3-distutils
 	sg3-utils
 	unzip
 	vim
