@@ -36,46 +36,6 @@ RUN if [ $(uname -m) = 'x86_64' ]; then \
     fi && \
     rm -rf /tmp/osie
 
-# # build lshw, done here so we can keep it cached as long as possible
-# COPY build-lshw.sh /tmp/osie/
-# RUN apt-get update -y && \
-#     apt-get install -y build-essential && \
-#     (cd /tmp/osie/ && ./build-lshw.sh) && \
-#     apt-get -qy remove build-essential && \
-#     apt-get -qy autoremove && \
-#     apt-get -qy clean && \
-#     rm -rf /var/lib/apt/lists/* /tmp/osie/
-#
-# # build nvme cli, done here so we can keep it cached as long as possible
-# COPY build-nvme-cli.sh /tmp/osie/
-# RUN apt-get update -y && \
-#     apt-get install -y build-essential && \
-#     (cd /tmp/osie/ && ./build-nvme-cli.sh) && \
-#     apt-get -qy remove build-essential && \
-#     apt-get -qy autoremove && \
-#     apt-get -qy clean && \
-#     rm -rf /var/lib/apt/lists/* /tmp/osie/
-
-# build mstflint, done here so we can keep it cached as long as possible
-COPY build-mstflint.sh /tmp/osie/
-RUN apt-get update -y && \
-    apt-get install -y build-essential && \
-    (cd /tmp/osie/ && ./build-mstflint.sh) && \
-    apt-get -qy remove build-essential && \
-    apt-get -qy autoremove && \
-    apt-get -qy clean && \
-    rm -rf /var/lib/apt/lists/* /tmp/osie/
-
-# # build smartmontools, done here so we can keep it cached as long as possible
-# COPY build-smartmontools.sh /tmp/osie/
-# RUN apt-get update -y && \
-#     apt-get install -y build-essential && \
-#     (cd /tmp/osie/ && ./build-smartmontools.sh) && \
-#     apt-get -qy remove build-essential && \
-#     apt-get -qy autoremove && \
-#     apt-get -qy clean && \
-#     rm -rf /var/lib/apt/lists/* /tmp/osie/
-
 ARG PACKET_HARDWARE_COMMIT=68a25da2b6a3d3281838bff6b62639438116d0d1
 ARG PACKET_NETWORKING_COMMIT=2c201b2da0563ca9363f78170663c0baa6054e32
 
