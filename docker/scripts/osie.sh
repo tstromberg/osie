@@ -368,6 +368,8 @@ EOF
 			  post:
 			    - instance_id
 			  tries: 5
+			runcmd:
+			 - [ update-initramfs -u ]
 			ssh_genkeytypes: ['rsa', 'dsa', 'ecdsa', 'ed25519']
 			ssh_pwauth:   0
 			cloud_init_modules:
